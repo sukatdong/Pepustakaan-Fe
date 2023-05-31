@@ -5,7 +5,7 @@ import {
     createMahasiswa,
     updateMahasiswa,
     deleteMahasiswa
-} from "../controllers/mahasiswacontroller.js";
+} from "../controllers/mahasiswacontrollers.js";
 
 const router = express.Router();
 
