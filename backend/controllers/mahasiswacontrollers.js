@@ -1,6 +1,6 @@
-import mahasiswa from "../models/mahasiswa.js";
+import mahasiswa from "../models/mahasiswamodels.js";
 
-export const getUsers = async(req, res) =>{
+export const getMahasiswa = async(req, res) =>{
     try {
         const response = await mahasiswa.findAll();
         res.status(200).json(response);
@@ -9,7 +9,7 @@ export const getUsers = async(req, res) =>{
     }
 }
 
-export const getUserById = async(req, res) =>{
+export const getMahasiswaById = async(req, res) =>{
     try {
         const response = await mahasiswa.findOne({
             where:{
@@ -22,7 +22,7 @@ export const getUserById = async(req, res) =>{
     }
 }
 
-export const createUser = async(req, res) =>{
+export const createMahasiswa = async(req, res) =>{
     try {
         await mahasiswa.create(req.body);
         res.status(201).json({msg: "mahasiswa Created"});
@@ -31,7 +31,7 @@ export const createUser = async(req, res) =>{
     }
 }
 
-export const updateUser = async(req, res) =>{
+export const updateMahasiswa = async(req, res) =>{
     try {
         await mahasiswa.update(req.body,{
             where:{
@@ -44,7 +44,7 @@ export const updateUser = async(req, res) =>{
     }
 }
 
-export const deleteUser = async(req, res) =>{
+export const deleteMahasiswa = async(req, res) =>{
     try {
         await mahasiswa.destroy({
             where:{
